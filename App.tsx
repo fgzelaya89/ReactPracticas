@@ -11,7 +11,11 @@ export default function App() {
       <p></p>
       <Idioma/>
       <BtnDos/>
+      <p/>
       <Btn/>
+      <p/>
+
+    <SaludoIdioma nom='Fer' idio='e'/>
     </div>
   );
 }
@@ -56,3 +60,18 @@ const NombreDos =()=>{
 
   const BtnDos =()=>  <button onClick={  ()=> alert("Hola") }> Enviar </button>
 
+  const BtnTres = (props)=>{ return null; }
+
+  class BtnTress extends React.Component{
+    render(){ console.log(this.props); return null; }
+  }
+
+
+  const SaludoIdioma = ({nom, idio})=>{
+    console.log(idio);
+    const msj = idio === "es" ? 'Hola':'Hello';
+    return <p>{msj} {nom}</p>
+  }
+  SaludoIdioma.defaultProps ={
+    idio : "es"
+  }
