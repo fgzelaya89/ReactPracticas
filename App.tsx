@@ -14,6 +14,7 @@ export default function App() {
       <p/>
       <Btn/>
       <p/>
+      <BtnTres/>
 
     <SaludoIdioma nom='Fer' idio='e'/>
     </div>
