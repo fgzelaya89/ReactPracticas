@@ -6,9 +6,12 @@ export default function App() {
     <div>
       <h1>Hello StackBlitz!</h1>
       <p>Start editing to see some magic happen :)</p>
-      <Nombres />
       <h1>Metodo Dos</h1>
       <NombreDos/>
+      <p></p>
+      <Idioma/>
+      <BtnDos/>
+      <Btn/>
     </div>
   );
 }
@@ -26,8 +29,30 @@ const Nombres = () => {
   return <ul>{getNombre()}</ul>;
 }
 
+//YEs importante poner el key a la lista, para q el compilador tenga un punto de referencia
 const NombreDos =()=>{
   return <ul>{
-    nombre.map( nombre=> <li>{nombre}</li> )
+    nombre.map( (nombre, index)=> <li key = {index}>{nombre}</li> )
     }</ul>
   }
+  //Condificiones
+
+  const Idioma =()=>{
+    const idioma = "es";
+
+    return <div>
+      {
+        idioma === "es" ? <p>HOla</p> : <p>Hello</p> 
+      }
+    </div>
+  }
+
+  //Botones
+  const Btn = ()=>{
+    return React.createElement("button",{
+      onClick: ()=> alert("Hola")
+    },"Enviar");
+  }
+
+  const BtnDos =()=>  <button onClick={  ()=> alert("Hola") }> Enviar </button>
+
